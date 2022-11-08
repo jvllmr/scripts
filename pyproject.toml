@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "scripts"
+version = "0.1.0"
+description = ""
+authors = ["Jan Vollmer <jan@vllmr.dev>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+steam = {extras = ["client"], version = "^1.4.3"}
+requests = "^2.28.1"
+rich = "^12.6.0"
+
+
+[tool.poetry.group.dev.dependencies]
+poetry-types = "^0.3.3"
+
+
+[tool.poetry.group.types.dependencies]
+types-requests = "^2.28.11.2"
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
