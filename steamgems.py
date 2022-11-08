@@ -19,7 +19,7 @@ ITEMS_IN_INVENTORY_COUNT = 5_000
 
 @contextmanager
 def steam_client():
-    client = SteamClient("idieddude")
+    client = SteamClient(USER_NAME)
     client.cli_login()
     yield client
 
