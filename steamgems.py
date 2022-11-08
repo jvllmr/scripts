@@ -76,10 +76,12 @@ def main():
                         "sessionid": session_id,
                         "appid": str(item_desc["market_fee_app"]),
                     }
-
-                    data["goo_value_expected"] = session.get(
-                        f"https://steamcommunity.com/id/{STEAM_PROFILE_ID}/ajaxgetgoovalue?{urlencode(data)}"  # noqa: E501
-                    ).json()["goo_value"]
+                    try:
+                        data["goo_value_expected"] = session.get(
+                            f"https://steamcommunity.com/id/{STEAM_PROFILE_ID}/ajaxgetgoovalue?{urlencode(data)}"  # noqa: E501
+                        ).json()["goo_value"]
+                    except Exception:
+                        continue
 
                     headers = {
                         "User-Agent": "Mozilla/5.0 (X11; Linux x86_64; rv:106.0) Gecko/20100101 Firefox/106.0",  # noqa: E501
