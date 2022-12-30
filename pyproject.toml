@@ -33,3 +33,4 @@ profile="black"
 
 [tool.flake8]
 max_line_length = 100
+extend-ignore = W503
